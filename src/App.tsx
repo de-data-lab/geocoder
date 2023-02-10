@@ -168,17 +168,12 @@ const App = (): JSX.Element => {
     <PageLayout name={name} >
       <AuthenticatedTemplate>
         
-        <div>
-          {storageConfigured && !uploading && <UploadArea />}
-          {storageConfigured && uploading && <div>Uploading</div>}
-          <hr />
-          {storageConfigured && blobList.length > 0 && DisplayImagesFromContainer()}
-          {!storageConfigured && <div>Storage is not configured.</div>}
-        </div>
+        
 
       </AuthenticatedTemplate>
 
       <UnauthenticatedTemplate>
+        <UploadArea />
       </UnauthenticatedTemplate>
     </PageLayout>
   );
