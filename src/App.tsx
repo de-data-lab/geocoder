@@ -1,8 +1,10 @@
 // ./src/App.tsx
 
+import "./App.css";
 import React, { useState } from 'react';
 import Path from 'path';
 import uploadFileToBlob, { isStorageConfigured } from './azure-storage-blob';
+import { Dropzone, FileItem } from "@dropzone-ui/react";
 
 // import React from "react";
 import { PageLayout } from "./components/PageLayout";
@@ -15,6 +17,8 @@ import { ProfileData } from "./components/ProfileData";
 import { callMsGraph } from "./graph";
 // End addition
 
+
+
 function ProfileContent() {
   const { instance, accounts } = useMsal();
   const [graphData, setGraphData] = useState(null);
@@ -22,50 +26,56 @@ function ProfileContent() {
   const name = accounts[0] && accounts[0].name;
 
   function RequestProfileData() {
-      const request = {
-          ...loginRequest,
-          account: accounts[0]
-      };
+    const request = {
+      ...loginRequest,
+      account: accounts[0]
+    };
 
-      // Silently acquires an access token which is then attached to a request for Microsoft Graph data
-      instance.acquireTokenSilent(request).then((response) => {
-          callMsGraph(response.accessToken).then(response => setGraphData(response));
-      }).catch((e) => {
-          instance.acquireTokenPopup(request).then((response) => {
-              callMsGraph(response.accessToken).then(response => setGraphData(response));
-          });
+    // Silently acquires an access token which is then attached to a request for Microsoft Graph data
+    instance.acquireTokenSilent(request).then((response) => {
+      callMsGraph(response.accessToken).then(response => setGraphData(response));
+    }).catch((e) => {
+      instance.acquireTokenPopup(request).then((response) => {
+        callMsGraph(response.accessToken).then(response => setGraphData(response));
       });
+    });
   }
 
   return (
-      <>
-          <h5 className="card-title">Welcome {name}</h5>
-          {graphData ? 
-              <ProfileData graphData={graphData} />
-              :
-              <Button variant="secondary" onClick={RequestProfileData}>Request Profile Information</Button>
-          }
-      </>
+    <>
+      <h5 className="card-title">Welcome {name}</h5>
+      {graphData ?
+        <ProfileData graphData={graphData} />
+        :
+        <Button variant="secondary" onClick={RequestProfileData}>Request Profile Information</Button>
+      }
+    </>
   );
 };
 
 // Previous storage code
 const storageConfigured = isStorageConfigured();
 
+
+
+
 const App = (): JSX.Element => {
   // all blobs in container
   const [blobList, setBlobList] = useState<string[]>([]);
 
   // current file to upload into container
-  const [fileSelected, setFileSelected] = useState(null);
+  const [fileSelected, setFileSelected] = useState<any[]>([]);
+
+  const { instance, accounts } = useMsal();
+  const name = accounts[0] && accounts[0].name;
 
   // UI/form management
   const [uploading, setUploading] = useState(false);
   const [inputKey, setInputKey] = useState(Math.random().toString(36));
 
-  const onFileChange = (event: any) => {
+  const onFileChange = (incommingFiles: any) => {
     // capture file into state
-    setFileSelected(event.target.files[0]);
+    setFileSelected(incommingFiles);
   };
 
   const onFileUpload = async () => {
@@ -73,25 +83,26 @@ const App = (): JSX.Element => {
     setUploading(true);
 
     // *** UPLOAD TO AZURE STORAGE ***
-    const blobsInContainer: string[] = await uploadFileToBlob(fileSelected);
+    const blobsInContainer: string[] = await uploadFileToBlob(fileSelected[0]);
 
     // prepare UI for results
     setBlobList(blobsInContainer);
 
     // reset state/form
-    setFileSelected(null);
+    setFileSelected([]);
     setUploading(false);
     setInputKey(Math.random().toString(36));
   };
 
   // display form
   const DisplayForm = () => (
-    <div>
+    <form>
       <input type="file" onChange={onFileChange} key={inputKey || ''} />
-      <button type="submit" onClick={onFileUpload}>
-        Upload!
-          </button>
-    </div>
+      <p>{"Drag your files here or click in this area."}</p>
+      <button type="submit" onClick={onFileUpload}>Upload</button>
+    </form>
+
+
   )
 
   // display file name and image
@@ -114,31 +125,64 @@ const App = (): JSX.Element => {
     </div>
   );
 
-//End previous storage code
+  //End previous storage code
 
+  const removeFile = (id: any) => {
+    setFileSelected(fileSelected.filter((x) => x.id !== id));
+  };
 
-// function App() {
+  const dropzoneStyle = {
+    background: "ffffff"
+  }
+
+  const UploadArea = () => (
+    <div className="upload-area">
+      <Dropzone
+        onChange={onFileChange}
+        value={fileSelected}
+        accept="text/csv"
+        label="click or drop your files here"
+        maxFiles={1}
+        maxFileSize={104857600}
+        style={dropzoneStyle}
+      >
+        {fileSelected.length > 0 &&
+          fileSelected.map((file) => (
+            <FileItem
+              {...file}
+              onDelete={removeFile}
+              key={file.id}
+              info
+            />
+          ))}
+
+      </Dropzone>
+      <div className="box has-text-centered">
+        <button type="submit" className="button is-primary" onClick={onFileUpload}>Upload File</button>
+      </div>
+    </div>
+  )
+
+  // function App() {
   return (
-      <PageLayout>
-           <AuthenticatedTemplate>
-              <ProfileContent />
-                <div>
-                  <h1>Upload file to Azure Blob Storage</h1>
-                  {storageConfigured && !uploading && DisplayForm()}
-                  {storageConfigured && uploading && <div>Uploading</div>}
-                  <hr />
-                  {storageConfigured && blobList.length > 0 && DisplayImagesFromContainer()}
-                  {!storageConfigured && <div>Storage is not configured.</div>}
-                </div>
-              
-            </AuthenticatedTemplate>
+    <PageLayout name={name} >
+      <AuthenticatedTemplate>
+        
+        <div>
+          {storageConfigured && !uploading && <UploadArea />}
+          {storageConfigured && uploading && <div>Uploading</div>}
+          <hr />
+          {storageConfigured && blobList.length > 0 && DisplayImagesFromContainer()}
+          {!storageConfigured && <div>Storage is not configured.</div>}
+        </div>
 
-            <UnauthenticatedTemplate>
-                <p>You are not signed in! Please take a moment to sign in above.</p>
-            </UnauthenticatedTemplate>
-      </PageLayout>
+      </AuthenticatedTemplate>
+
+      <UnauthenticatedTemplate>
+      </UnauthenticatedTemplate>
+    </PageLayout>
   );
-// }
+  // }
 };
 
 export default App;

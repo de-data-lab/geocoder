@@ -2,7 +2,7 @@ import React from "react";
 import { useMsal } from "@azure/msal-react";
 import { loginRequest } from "../authConfig";
 import Button from "react-bootstrap/Button";
-
+import MicrosoftLogin from "react-microsoft-login";
 
 /**
  * Renders a button which, when selected, will open a popup for login
@@ -18,6 +18,6 @@ export const SignInButton = () => {
         }
     }
     return (
-        <Button variant="secondary" className="ml-auto" onClick={() => handleLogin("popup")}>Sign in using Popup</Button>
+        <MicrosoftLogin className="logout" clientId={process.env.REACT_APP_CLIENT_ID} authCallback={() => handleLogin("popup")} />
     );
 }
