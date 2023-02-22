@@ -16,3 +16,7 @@ body {
 .menu-list a {
   text-decoration: none;
 }
+
+.navbar-start a:hover {
+	color: #00d1b2;
+}

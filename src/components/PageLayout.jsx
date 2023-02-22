@@ -65,7 +65,7 @@ const Header = (props) => {
                     <div className="navbar-end">
                         <div className="navbar-item">
                             <div className="buttons">
-                                {!isAuthenticated ? 
+                                {isAuthenticated ? 
                                 <button className="button">
                                     <span className="icon">
                                         <FontAwesomeIcon icon={faUser} color="red" />
@@ -78,7 +78,7 @@ const Header = (props) => {
                                 </div>}
                                 
                                 <div className="button is-light">
-                                    {!isAuthenticated ? <SignOutButton /> : <SignInButton />}
+                                    {isAuthenticated ? <SignOutButton /> : <SignInButton />}
                                 </div>
 
                             </div>
@@ -173,9 +173,9 @@ export const PageLayout = (props) => {
     return (
         <>
             <Header {...props} />
-            <UnauthenticatedTemplate>
+            <AuthenticatedTemplate>
                 <Main {...props} />
-            </UnauthenticatedTemplate>
+            </AuthenticatedTemplate>
             <br />
             <br />
 

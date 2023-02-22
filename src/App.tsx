@@ -167,13 +167,13 @@ const App = (): JSX.Element => {
   return (
     <PageLayout name={name} >
       <AuthenticatedTemplate>
-        
+      <UploadArea />
         
 
       </AuthenticatedTemplate>
 
       <UnauthenticatedTemplate>
-        <UploadArea />
+        
       </UnauthenticatedTemplate>
     </PageLayout>
   );
