@@ -1,0 +1,6 @@
+# This is a basic workflow that is manually triggered
+
+
+- name: 'Create env file'
+        run: |
+          echo "${{secrets.WEBSITE_ENV_STAGE }}" > .env
