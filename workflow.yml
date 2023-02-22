@@ -1,0 +1,13 @@
+- name: 'Create env file'
+        run: |
+          touch .env
+          echo REACT_APP_CLIENT_ID="5040f4a8-80f1-43ea-8110-4597674bf5fd" >> .env
+          echo REACT_APP_TENANT_ID="https://login.microsoftonline.com/6b6e686a-17c6-4ec7-acae-89575bb57139" >> .env
+          echo REACT_APP_REDIRECT_URI="http://localhost:3000" >> .env
+          echo SUBSCRIPTION_ID= '6dcc285d-87d5-42a0-a22c-19cb37d48bb6' >> .env
+          echo EXISTING_RESOURCE_GROUP= 'DefaultResourceGroup-CUS' >> .env
+          echo STORAGE_RESOURCE_NAME= 'geolocator' >> .env
+          echo REACT_APP_SAS_TOKEN= 'sv=2021-06-08&ss=bfqt&srt=sco&sp=rwdlacupiytfx&se=2023-02-07T23:16:04Z&st=2023-02-07T15:16:04Z&spr=https&sig=JqIfa1%2BmzWimd4mgWrjiojNiQ7Uu3MbbdmZ4g79UcGk%3D' >> .env
+          echo REACT_APP_CONTAINER_NAME= 'trigger' >> .env
+          echo REACT_APP_STORAGE_ACCOUNT_NAME= 'geolocator' >> .env
+          cat .env
