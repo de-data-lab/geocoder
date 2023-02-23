@@ -75,6 +75,7 @@ const App = (): JSX.Element => {
 
   const onFileChange = (incommingFiles: any) => {
     // capture file into state
+    console.log(incommingFiles[0])
     setFileSelected(incommingFiles);
   };
 
@@ -82,11 +83,15 @@ const App = (): JSX.Element => {
     // prepare UI
     setUploading(true);
 
+    console.log("uploading...")
+    console.log(fileSelected[0].file)
     // *** UPLOAD TO AZURE STORAGE ***
-    const blobsInContainer: string[] = await uploadFileToBlob(fileSelected[0]);
+    const blobsInContainer: string[] = await uploadFileToBlob(fileSelected[0].file);
 
     // prepare UI for results
     setBlobList(blobsInContainer);
+    console.log("blobsInContainer")
+    console.log(blobsInContainer)
 
     // reset state/form
     setFileSelected([]);

@@ -92,24 +92,24 @@ const Header = (props) => {
 
 const Main = (props) => {
     return (
-        <div class="section">
-            <div class="columns">
-                <aside class="column is-2">
-                    <nav class="menu">
-                        <p class="menu-label">
+        <div className="section">
+            <div className="columns">
+                <aside className="column is-2">
+                    <nav className="menu">
+                        <p className="menu-label">
                             General
                         </p>
-                        <ul class="menu-list">
-                            <li><a class="is-active has-background-primary">Upload</a></li>
+                        <ul className="menu-list">
+                            <li><a className="is-active has-background-primary">Upload</a></li>
                             <li><a>Option 1</a></li>
                         </ul>
-                        <p class="menu-label">
+                        <p className="menu-label">
                             Administration
                         </p>
-                        <ul class="menu-list">
+                        <ul className="menu-list">
                             <li><a>Option 0</a></li>
                             <li>
-                                <a class="">Option 1</a>
+                                <a className="">Option 1</a>
                                 <ul>
                                     <li><a>SubOption 0</a></li>
                                     <li><a>SubOption 1</a></li>
@@ -120,10 +120,10 @@ const Main = (props) => {
                             <li><a>Option 3</a></li>
                             <li><a>Option 4</a></li>
                         </ul>
-                        <p class="menu-label">
+                        <p className="menu-label">
                             Accout
                         </p>
-                        <ul class="menu-list">
+                        <ul className="menu-list">
                             <li><a>Option 0</a></li>
                             <li><a>Option 1</a></li>
                             <li><a>Option 2</a></li>
@@ -131,25 +131,25 @@ const Main = (props) => {
                     </nav>
                 </aside>
 
-                <main class="column">
-                    <div class="level">
-                        <div class="level-left">
-                            <div class="level-item">
-                                <div class="title">Upload</div>
+                <main className="column">
+                    <div className="level">
+                        <div className="level-left">
+                            <div className="level-item">
+                                <div className="title">Upload</div>
                             </div>
                         </div>
-                        <div class="level-right">
-                            <div class="level-item">
-                                <button type="button" class="button is-small">
+                        <div className="level-right">
+                            <div className="level-item">
+                                <button type="button" className="button is-small">
                                     Some Information/button Here
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                    <div class="columns is-multiline">
-                        <div class="column">
-                            <div class="b">
+                    <div className="columns is-multiline">
+                        <div className="column">
+                            <div className="b">
                                 {props.children}
                             </div>
                         </div>
