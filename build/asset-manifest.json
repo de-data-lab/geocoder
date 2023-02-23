@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/geolocator/static/css/main.ca377992.chunk.css",
-    "main.js": "/geolocator/static/js/main.082bf36e.chunk.js",
-    "main.js.map": "/geolocator/static/js/main.082bf36e.chunk.js.map",
+    "main.js": "/geolocator/static/js/main.e78ef3d8.chunk.js",
+    "main.js.map": "/geolocator/static/js/main.e78ef3d8.chunk.js.map",
     "runtime-main.js": "/geolocator/static/js/runtime-main.8cf0f138.js",
     "runtime-main.js.map": "/geolocator/static/js/runtime-main.8cf0f138.js.map",
     "static/css/2.5fe7ecb8.chunk.css": "/geolocator/static/css/2.5fe7ecb8.chunk.css",
@@ -19,6 +19,6 @@
     "static/css/2.5fe7ecb8.chunk.css",
     "static/js/2.1d334d13.chunk.js",
     "static/css/main.ca377992.chunk.css",
-    "static/js/main.082bf36e.chunk.js"
+    "static/js/main.e78ef3d8.chunk.js"
   ]
 }
