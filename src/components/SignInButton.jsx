@@ -9,6 +9,8 @@ import MicrosoftLogin from "react-microsoft-login";
  */
 export const SignInButton = () => {
     const { instance } = useMsal();
+    console.log(instance)
+    console.log(loginRequest)
 
     const handleLogin = (loginType) => {
         if (loginType === "popup") {
