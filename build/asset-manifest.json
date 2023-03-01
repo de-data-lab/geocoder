@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/geolocator/static/css/main.ca377992.chunk.css",
-    "main.js": "/geolocator/static/js/main.aa9cad6e.chunk.js",
-    "main.js.map": "/geolocator/static/js/main.aa9cad6e.chunk.js.map",
+    "main.js": "/geolocator/static/js/main.8ac53b21.chunk.js",
+    "main.js.map": "/geolocator/static/js/main.8ac53b21.chunk.js.map",
     "runtime-main.js": "/geolocator/static/js/runtime-main.8cf0f138.js",
     "runtime-main.js.map": "/geolocator/static/js/runtime-main.8cf0f138.js.map",
     "static/css/2.5fe7ecb8.chunk.css": "/geolocator/static/css/2.5fe7ecb8.chunk.css",
-    "static/js/2.a08188ac.chunk.js": "/geolocator/static/js/2.a08188ac.chunk.js",
-    "static/js/2.a08188ac.chunk.js.map": "/geolocator/static/js/2.a08188ac.chunk.js.map",
+    "static/js/2.7dc167ff.chunk.js": "/geolocator/static/js/2.7dc167ff.chunk.js",
+    "static/js/2.7dc167ff.chunk.js.map": "/geolocator/static/js/2.7dc167ff.chunk.js.map",
     "index.html": "/geolocator/index.html",
     "static/css/2.5fe7ecb8.chunk.css.map": "/geolocator/static/css/2.5fe7ecb8.chunk.css.map",
     "static/css/main.ca377992.chunk.css.map": "/geolocator/static/css/main.ca377992.chunk.css.map",
-    "static/js/2.a08188ac.chunk.js.LICENSE.txt": "/geolocator/static/js/2.a08188ac.chunk.js.LICENSE.txt",
+    "static/js/2.7dc167ff.chunk.js.LICENSE.txt": "/geolocator/static/js/2.7dc167ff.chunk.js.LICENSE.txt",
     "static/media/Geo_logo.c7423293.png": "/geolocator/static/media/Geo_logo.c7423293.png"
   },
   "entrypoints": [
     "static/js/runtime-main.8cf0f138.js",
     "static/css/2.5fe7ecb8.chunk.css",
-    "static/js/2.a08188ac.chunk.js",
+    "static/js/2.7dc167ff.chunk.js",
     "static/css/main.ca377992.chunk.css",
-    "static/js/main.aa9cad6e.chunk.js"
+    "static/js/main.8ac53b21.chunk.js"
   ]
 }

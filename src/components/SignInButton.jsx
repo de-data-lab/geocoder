@@ -8,12 +8,14 @@ import MicrosoftLogin from "react-microsoft-login";
  * Renders a button which, when selected, will open a popup for login
  */
 export const SignInButton = () => {
+    console.log("test001");
     const { instance } = useMsal();
     console.log(instance)
     console.log(loginRequest)
 
     const handleLogin = (loginType) => {
         if (loginType === "popup") {
+            console.log("count login");
             instance.loginPopup(loginRequest).catch(e => {
                 console.log(e);
             });
