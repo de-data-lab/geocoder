@@ -22,6 +22,7 @@ export const SignInButton = () => {
         }
     }
     return (
-        <MicrosoftLogin className="logout" clientId={process.env.REACT_APP_CLIENT_ID} authCallback={() => handleLogin("popup")} />
+        /*<MicrosoftLogin className="logout" clientId={process.env.REACT_APP_CLIENT_ID} authCallback={() => handleLogin("popup")} />*/
+        <div onClick={() => handleLogin("popup")}>Sign in</div>
     );
 }

@@ -19,6 +19,7 @@ import { callMsGraph } from "./graph";
 
 
 
+
 function ProfileContent() {
   const { instance, accounts } = useMsal();
   const [graphData, setGraphData] = useState(null);
@@ -168,9 +169,9 @@ const App = (): JSX.Element => {
     </div>
   )
 
-  // function App() {
+  console.log("render app once");
   return (
-    <PageLayout name={name} >
+    <PageLayout name={name}>
       <AuthenticatedTemplate>
       <UploadArea />
         
@@ -182,7 +183,7 @@ const App = (): JSX.Element => {
       </UnauthenticatedTemplate>
     </PageLayout>
   );
-  // }
+  
 };
 
 export default App;

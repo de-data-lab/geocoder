@@ -12,6 +12,7 @@ import { msalConfig } from "./authConfig";
 // Addition
 const msalInstance = new PublicClientApplication(msalConfig);
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
+console.log("msInstance: " + msalInstance);
 root.render(
   <MsalProvider instance={msalInstance}>
     <App />

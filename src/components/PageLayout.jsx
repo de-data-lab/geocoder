@@ -17,7 +17,7 @@ import { AuthenticatedTemplate, UnauthenticatedTemplate, useMsal } from "@azure/
 
 const Header = (props) => {
     const isAuthenticated = useIsAuthenticated();
-
+    console.log(props)
     return (
         <div>
             <nav className="navbar" role="navigation" aria-label="main navigation">
@@ -70,7 +70,7 @@ const Header = (props) => {
                                     <span className="icon">
                                         <FontAwesomeIcon icon={faUser} color="red" />
                                     </span>
-                                <span>Yupeng Lei</span>
+                                <span>{props.name}</span>
                               </button>
                                 : 
                                 <div className="button is-primary">
@@ -168,7 +168,7 @@ const Main = (props) => {
 
 
 export const PageLayout = (props) => {
-
+    console.log("render count");
 
     return (
         <>
@@ -178,7 +178,7 @@ export const PageLayout = (props) => {
             </AuthenticatedTemplate>
             <br />
             <br />
-
+            
         </>
     );
 };
