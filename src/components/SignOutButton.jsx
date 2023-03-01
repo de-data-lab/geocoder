@@ -12,8 +12,8 @@ export const SignOutButton = () => {
     const handleLogout = (logoutType) => {
         if (logoutType === "popup") {
             instance.logoutPopup({
-                postLogoutRedirectUri: "/",
-                mainWindowRedirectUri: "/" // redirects the top level app after logout
+                postLogoutRedirectUri: "/geolocator",
+                mainWindowRedirectUri: "/geolocator" // redirects the top level app after logout
             });
         }
     }
