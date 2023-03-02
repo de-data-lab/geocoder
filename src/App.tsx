@@ -111,6 +111,9 @@ const App = (): JSX.Element => {
 
   )
 
+  console.log(blobList);
+
+
   // display file name and image
   const DisplayImagesFromContainer = () => (
     <div>
@@ -168,13 +171,14 @@ const App = (): JSX.Element => {
       </div>
     </div>
   )
+  
+  console.log(storageConfigured)
+  console.log(blobList);
 
-  console.log("render app once");
   return (
     <PageLayout name={name}>
       <AuthenticatedTemplate>
-      <UploadArea />
-        
+        <UploadArea />
 
       </AuthenticatedTemplate>
 
