@@ -17,6 +17,11 @@ body {
   text-decoration: none;
 }
 
+
 .navbar-start a:hover {
-	color: #00d1b2;
+	color: #00d1b2 !important;
+}
+
+.navbar-link:not(.is-arrowless)::after {
+	border-color: #00d1b2 !important;
 }
