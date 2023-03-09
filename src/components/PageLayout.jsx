@@ -19,11 +19,11 @@ const Header = (props) => {
         <div>
             <nav className="navbar" role="navigation" aria-label="main navigation">
                 <div className="navbar-brand">
-                    <a className="navbar-item" href="/#">
+                    <a className="navbar-item" href="https://de-data-lab.github.io/geolocator/">
                         <img src={Logo} width="112" height="28" alt=""/>
                     </a>
 
-                    <a role="button" href="/#" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <a role="button" href="https://de-data-lab.github.io/geolocator/" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
@@ -32,27 +32,27 @@ const Header = (props) => {
 
                 <div id="navbarBasicExample" className="navbar-menu">
                     <div className="navbar-start">
-                        <a className="navbar-item is-hoverable" href="/#">
+                        <a className="navbar-item is-hoverable" href="https://de-data-lab.github.io/geolocator/">
                             Home
                         </a>
 
-                        <a className="navbar-item is-hoverable" href="/#">
+                        <a className="navbar-item is-hoverable" href="https://de-data-lab.github.io/geolocator/">
                             Documentation
                         </a>
 
                         <div className="navbar-item has-dropdown is-hoverable">
-                            <a className="navbar-link" href="/#">
+                            <a className="navbar-link" href="https://de-data-lab.github.io/geolocator/">
                                 More
                             </a>
 
                             <div className="navbar-dropdown">
-                                <a className="navbar-item" href="/#">
+                                <a className="navbar-item" href="https://de-data-lab.github.io/geolocator/">
                                     About
                                 </a>
-                                <a className="navbar-item" href="/#">
+                                <a className="navbar-item" href="https://de-data-lab.github.io/geolocator/">
                                     Contact
                                 </a>
-                                <a className="navbar-item" href="/#">
+                                <a className="navbar-item" href="https://de-data-lab.github.io/geolocator/">
                                     Report an issue
                                 </a>
                             </div>
@@ -65,7 +65,7 @@ const Header = (props) => {
                                 {isAuthenticated ?
                                     <button className="button">
                                         <span className="icon">
-                                            <FontAwesomeIcon icon={faUser} color="red" />
+                                            <FontAwesomeIcon icon={faUser} color="#00d1b2" />
                                         </span>
                                         <span>{props.name}</span>
                                     </button>
@@ -158,33 +158,33 @@ export const PageLayout = (props) => {
                             General
                         </p>
                         <ul className="menu-list">
-                            <li><a className="is-active has-background-primary" href="/#">Upload</a></li>
-                            <li><a href="/#">Option 1</a></li>
+                            <li><a className="is-active has-background-primary" href="https://de-data-lab.github.io/geolocator/">Upload</a></li>
+                            <li><a href="https://de-data-lab.github.io/geolocator/">Option 1</a></li>
                         </ul>
                         <p className="menu-label">
                             Administration
                         </p>
                         <ul className="menu-list">
-                            <li><a href="/#">Option 0</a></li>
+                            <li><a href="https://de-data-lab.github.io/geolocator/">Option 0</a></li>
                             <li>
-                                <a href="/#" className="">Option 1</a>
+                                <a href="https://de-data-lab.github.io/geolocator/" className="">Option 1</a>
                                 <ul>
-                                    <li><a href="/#">SubOption 0</a></li>
-                                    <li><a href="/#">SubOption 1</a></li>
-                                    <li><a href="/#">SubOption 2</a></li>
+                                    <li><a href="https://de-data-lab.github.io/geolocator/">SubOption 0</a></li>
+                                    <li><a href="https://de-data-lab.github.io/geolocator/">SubOption 1</a></li>
+                                    <li><a href="https://de-data-lab.github.io/geolocator/">SubOption 2</a></li>
                                 </ul>
                             </li>
-                            <li><a href="/#">Option 2</a></li>
-                            <li><a href="/#">Option 3</a></li>
-                            <li><a href="/#">Option 4</a></li>
+                            <li><a href="https://de-data-lab.github.io/geolocator/">Option 2</a></li>
+                            <li><a href="https://de-data-lab.github.io/geolocator/">Option 3</a></li>
+                            <li><a href="https://de-data-lab.github.io/geolocator/">Option 4</a></li>
                         </ul>
                         <p className="menu-label">
                             Accout
                         </p>
                         <ul className="menu-list">
-                            <li><a href="/#">Option 0</a></li>
-                            <li><a href="/#">Option 1</a></li>
-                            <li><a href="/#">Option 2</a></li>
+                            <li><a href="https://de-data-lab.github.io/geolocator/">Option 0</a></li>
+                            <li><a href="https://de-data-lab.github.io/geolocator/">Option 1</a></li>
+                            <li><a href="https://de-data-lab.github.io/geolocator/">Option 2</a></li>
                         </ul>
                     </nav>
                 </aside>
