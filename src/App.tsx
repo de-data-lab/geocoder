@@ -89,7 +89,7 @@ const App = (): JSX.Element => {
 
 			</Dropzone>
 			<div className="box has-text-centered">
-				<button type="submit" className="button is-primary" onClick={onFileUpload}>Upload File</button>
+				<button type="submit" className="button is-primary" style={{backgroundColor: "#0057B8"}} onClick={onFileUpload}>Upload File</button>
 			</div>
 		</div>
 	)

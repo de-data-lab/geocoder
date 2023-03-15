@@ -19,9 +19,13 @@ body {
 
 
 .navbar-start a:hover {
-	color: #00d1b2 !important;
+	color: #0057B8 !important;
 }
 
 .navbar-link:not(.is-arrowless)::after {
-	border-color: #00d1b2 !important;
+	border-color: #0057B8 !important;
+}
+
+.navbar-item img {
+	width: auto;
 }
