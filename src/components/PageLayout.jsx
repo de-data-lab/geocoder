@@ -201,7 +201,7 @@ const Instruction = () => {
                     <h3 className="vertical-timeline-element-title">RESULT</h3>
                     <h4 className="vertical-timeline-element-subtitle"></h4>
                     <p>
-                        The geolocated addresses will be emailed to you as a ".zip" file when they are ready. 
+                        The geocoded addresses will be emailed to you as a ".zip" file when they are ready. 
                     </p>
                     <Image src={Result} />
                 </VerticalTimelineElement>
