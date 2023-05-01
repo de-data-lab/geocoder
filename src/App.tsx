@@ -10,7 +10,7 @@ import { PageLayout } from "./components/PageLayout";
 // Addition
 import 'bootstrap/dist/css/bootstrap.css';
 import { AuthenticatedTemplate, UnauthenticatedTemplate, useMsal } from "@azure/msal-react";
-
+import Alert from 'react-popup-alert'
 // End addition
 
 
@@ -49,6 +49,8 @@ const App = (): JSX.Element => {
 
 		// prepare UI for results
 		setBlobList(blobsInContainer);
+
+		onShowAlert('success');
 
 		// reset state/form
 		setFileSelected([]);
@@ -94,16 +96,55 @@ const App = (): JSX.Element => {
 		</div>
 	)
 
+	const [alert, setAlert] = useState({
+		type: 'error',
+		text: 'This is a alert message',
+		show: false
+	})
+
+	function onCloseAlert() {
+		setAlert({
+		  type: '',
+		  text: '',
+		  show: false
+		})
+	  }
+	
+	  function onShowAlert(type: any) {
+		setAlert({
+		  type: type,
+		  text: 'File successfully uploaded.',
+		  show: true
+		})
+	  }
 
 	return (
-		<PageLayout name={name} hasUploaded={storageConfigured && blobList.length > 0} >
-			<AuthenticatedTemplate>
-				<UploadArea />
-			</AuthenticatedTemplate>
+		<div>
+			<PageLayout name={name} hasUploaded={storageConfigured && blobList.length > 0} >
+				<AuthenticatedTemplate>
+					<UploadArea />
+				</AuthenticatedTemplate>
 
-			<UnauthenticatedTemplate>
-			</UnauthenticatedTemplate>
-		</PageLayout>
+				<UnauthenticatedTemplate>
+				</UnauthenticatedTemplate>
+			</PageLayout>
+			<Alert
+				header={''}
+				btnText={'Close'}
+				text={alert.text}
+				type={alert.type}
+				show={alert.show}
+				onClosePress={onCloseAlert}
+				pressCloseOnOutsideClick={true}
+				showBorderBottom={true}
+				alertStyles={{}}
+				headerStyles={{}}
+				textStyles={{}}
+				buttonStyles={{}}
+			/>
+    	</div>
+		
+		
 	);
 
 };

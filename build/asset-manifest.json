@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/geolocator/static/css/main.2a30bed0.chunk.css",
-    "main.js": "/geolocator/static/js/main.58ddd4be.chunk.js",
-    "main.js.map": "/geolocator/static/js/main.58ddd4be.chunk.js.map",
+    "main.js": "/geolocator/static/js/main.b01e5428.chunk.js",
+    "main.js.map": "/geolocator/static/js/main.b01e5428.chunk.js.map",
     "runtime-main.js": "/geolocator/static/js/runtime-main.8cf0f138.js",
     "runtime-main.js.map": "/geolocator/static/js/runtime-main.8cf0f138.js.map",
     "static/css/2.e0541b84.chunk.css": "/geolocator/static/css/2.e0541b84.chunk.css",
@@ -12,7 +12,7 @@
     "static/css/2.e0541b84.chunk.css.map": "/geolocator/static/css/2.e0541b84.chunk.css.map",
     "static/css/main.2a30bed0.chunk.css.map": "/geolocator/static/css/main.2a30bed0.chunk.css.map",
     "static/js/2.d74f2ae1.chunk.js.LICENSE.txt": "/geolocator/static/js/2.d74f2ae1.chunk.js.LICENSE.txt",
-    "static/media/Geo_logo.1b1c8db5.png": "/geolocator/static/media/Geo_logo.1b1c8db5.png",
+    "static/media/Geo_logo.e0859b97.png": "/geolocator/static/media/Geo_logo.e0859b97.png",
     "static/media/confirmation.20388572.png": "/geolocator/static/media/confirmation.20388572.png",
     "static/media/login.18734caf.png": "/geolocator/static/media/login.18734caf.png",
     "static/media/result.9c5c2108.png": "/geolocator/static/media/result.9c5c2108.png",
@@ -23,6 +23,6 @@
     "static/css/2.e0541b84.chunk.css",
     "static/js/2.d74f2ae1.chunk.js",
     "static/css/main.2a30bed0.chunk.css",
-    "static/js/main.58ddd4be.chunk.js"
+    "static/js/main.b01e5428.chunk.js"
   ]
 }

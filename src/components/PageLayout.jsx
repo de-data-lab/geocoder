@@ -17,6 +17,8 @@ import { fa4 } from '@fortawesome/free-solid-svg-icons';
 import { AuthenticatedTemplate } from "@azure/msal-react";
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
+import { useState } from "react";
+
 
 /**
  * Renders the navbar component with a sign-in button if a user is not authenticated
@@ -98,17 +100,16 @@ const Header = (props) => {
 }
 
 const Main = (props) => {
+    
+
     return (
         <div className="section">
             <div className="columns">
-
-
-
                 <main className="column">
                     <div className="level">
                         <div className="level-left">
                             <div className="level-item">
-                                <div className="title">{props.hasUploaded ? "You file has been uploaded successfully." : "You can upload a file now."}</div>
+                                <div className="title"></div>
                             </div>
                         </div>
                         <div className="level-right">
@@ -135,6 +136,7 @@ const Main = (props) => {
 
                 </main>
             </div>
+            
         </div>
     )
 }
@@ -214,7 +216,7 @@ const Instruction = () => {
 
 
 export const PageLayout = (props) => {
-
+    
     return (
         <>
             <Header {...props} />
@@ -224,52 +226,14 @@ export const PageLayout = (props) => {
             <UnauthenticatedTemplate>
                 <Instruction />
             </UnauthenticatedTemplate>
-
         </>
     );
 };
 
 
-/*******
- 
-<div className="columns">
-                <main className="column">
-                    <div className="level">
-                        <div className="level-left">
-                            <div className="level-item">
-                                <div className="title">Instruction</div>
-                            </div>
-                        </div>
-                        <div className="level-right">
-                            <div className="level-item">
-                                <button type="button" className="button is-small">
-                                    Beta version 
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="columns is-multiline">
-                        <div className="column">
-                            <div className="b">
-                                1. Login with your email. 
-                            </div>
-                            <div className="b">
-                                2. Upload a ".csv", ".xls", or ".xlsx" file where the first line is a name like "addresses" and the other lines are addresses.
-                            </div>
-                            <div className="b">
-                                3. You will receive email confirmation that your file has been received and is being processed. 
-                            </div>
-                            <div className="b">
-                                4. The geolocated addresses will be emailed to you as a ".zip" file when they are ready. 
-                            </div>
-                        </div>
-                    </div>
-                </main>
-            </div>
 
 
 
 
 
 
- */
