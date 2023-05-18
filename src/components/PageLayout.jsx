@@ -17,8 +17,6 @@ import { fa4 } from '@fortawesome/free-solid-svg-icons';
 import { AuthenticatedTemplate } from "@azure/msal-react";
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import { useState } from "react";
-
 
 /**
  * Renders the navbar component with a sign-in button if a user is not authenticated
@@ -143,7 +141,7 @@ const Main = (props) => {
 
 const Image = (props) => {
     return (
-        <img src={props.src} style={{marginTop: "30px"}} />
+        <img src={props.src} alt="" style={{marginTop: "30px"}} />
     )
 }
 
